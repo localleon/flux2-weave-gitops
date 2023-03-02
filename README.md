@@ -22,4 +22,11 @@ export PASSWORD=""
 gitops create dashboard ww-gitops \
   --password=$PASSWORD \
   --export > ./clusters/my-cluster/weave-gitops-dashboard.yaml
+git add -A && git commit -m "Add Weave GitOps Dashboard"
+git push
+```
+
+Access to UI of WeaveGitOps 
+```
+kubectl port-forward svc/ww-gitops-weave-gitops -n flux-system 9001:9001
 ```
